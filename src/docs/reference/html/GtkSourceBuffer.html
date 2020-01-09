@@ -1,0 +1,1309 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<title>GtkSourceBuffer</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.71.0">
+<link rel="start" href="index.html" title="GtkSourceView Reference Manual">
+<link rel="up" href="rn01.html" title="API reference">
+<link rel="prev" href="rn01.html" title="API reference">
+<link rel="next" href="gtksourceview-Searching-in-a-GtkSourceBuffer.html" title="Searching in a GtkSourceBuffer">
+<meta name="generator" content="GTK-Doc V1.8 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="reference" href="rn01.html" title="API reference">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="rn01.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="rn01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">GtkSourceView Reference Manual</th>
+<td><a accesskey="n" href="gtksourceview-Searching-in-a-GtkSourceBuffer.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts"><nobr><a href="#id2563723" class="shortcut">Top</a>
+                  &#160;|&#160;
+                  <a href="#id2502410" class="shortcut">Description</a>
+                  &#160;|&#160;
+                  <a href="#id2502252" class="shortcut">Object Hierarchy</a>
+                  &#160;|&#160;
+                  <a href="#id2502283" class="shortcut">Properties</a>
+                  &#160;|&#160;
+                  <a href="#id2502365" class="shortcut">Signals</a></nobr></td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="GtkSourceBuffer"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2>
+<a name="id2563723"></a><span class="refentrytitle">GtkSourceBuffer</span>
+</h2>
+<p>GtkSourceBuffer &#8212; Text buffer object for <a href="GtkSourceView.html" title="GtkSourceView"><span class="type">GtkSourceView</span></a></p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<h2>Synopsis</h2>
+<pre class="synopsis">
+
+#include &lt;gtksourceview/gtksourcebuffer.h&gt;
+
+
+                    <a href="GtkSourceBuffer.html#GtkSourceBuffer-struct">GtkSourceBuffer</a>;
+<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a>*    <a href="GtkSourceBuffer.html#gtk-source-buffer-new">gtk_source_buffer_new</a>               (<a href="GtkSourceTagTable.html" title="GtkSourceTagTable">GtkSourceTagTable</a> *table);
+<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a>*    <a href="GtkSourceBuffer.html#gtk-source-buffer-new-with-language">gtk_source_buffer_new_with_language</a> (<a href="GtkSourceLanguage.html" title="GtkSourceLanguage">GtkSourceLanguage</a> *language);
+gboolean            <a href="GtkSourceBuffer.html#gtk-source-buffer-get-check-brackets">gtk_source_buffer_get_check_brackets</a>
+                                                        (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer);
+void                <a href="GtkSourceBuffer.html#gtk-source-buffer-set-check-brackets">gtk_source_buffer_set_check_brackets</a>
+                                                        (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer,
+                                                         gboolean check_brackets);
+void                <a href="GtkSourceBuffer.html#gtk-source-buffer-set-bracket-match-style">gtk_source_buffer_set_bracket_match_style</a>
+                                                        (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *source_buffer,
+                                                         const <a href="gtksourceview-GtkSourceTagStyle.html#GtkSourceTagStyle">GtkSourceTagStyle</a> *style);
+gboolean            <a href="GtkSourceBuffer.html#gtk-source-buffer-get-highlight">gtk_source_buffer_get_highlight</a>     (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer);
+void                <a href="GtkSourceBuffer.html#gtk-source-buffer-set-highlight">gtk_source_buffer_set_highlight</a>     (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer,
+                                                         gboolean highlight);
+gint                <a href="GtkSourceBuffer.html#gtk-source-buffer-get-max-undo-levels">gtk_source_buffer_get_max_undo_levels</a>
+                                                        (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer);
+void                <a href="GtkSourceBuffer.html#gtk-source-buffer-set-max-undo-levels">gtk_source_buffer_set_max_undo_levels</a>
+                                                        (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer,
+                                                         gint max_undo_levels);
+<a href="GtkSourceLanguage.html" title="GtkSourceLanguage">GtkSourceLanguage</a>*  <a href="GtkSourceBuffer.html#gtk-source-buffer-get-language">gtk_source_buffer_get_language</a>      (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer);
+void                <a href="GtkSourceBuffer.html#gtk-source-buffer-set-language">gtk_source_buffer_set_language</a>      (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer,
+                                                         <a href="GtkSourceLanguage.html" title="GtkSourceLanguage">GtkSourceLanguage</a> *language);
+gunichar            <a href="GtkSourceBuffer.html#gtk-source-buffer-get-escape-char">gtk_source_buffer_get_escape_char</a>   (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer);
+void                <a href="GtkSourceBuffer.html#gtk-source-buffer-set-escape-char">gtk_source_buffer_set_escape_char</a>   (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer,
+                                                         gunichar escape_char);
+gboolean            <a href="GtkSourceBuffer.html#gtk-source-buffer-can-undo">gtk_source_buffer_can_undo</a>          (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer);
+gboolean            <a href="GtkSourceBuffer.html#gtk-source-buffer-can-redo">gtk_source_buffer_can_redo</a>          (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer);
+void                <a href="GtkSourceBuffer.html#gtk-source-buffer-undo">gtk_source_buffer_undo</a>              (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer);
+void                <a href="GtkSourceBuffer.html#gtk-source-buffer-redo">gtk_source_buffer_redo</a>              (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer);
+void                <a href="GtkSourceBuffer.html#gtk-source-buffer-begin-not-undoable-action">gtk_source_buffer_begin_not_undoable_action</a>
+                                                        (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer);
+void                <a href="GtkSourceBuffer.html#gtk-source-buffer-end-not-undoable-action">gtk_source_buffer_end_not_undoable_action</a>
+                                                        (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer);
+<a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker">GtkSourceMarker</a>*    <a href="GtkSourceBuffer.html#gtk-source-buffer-create-marker">gtk_source_buffer_create_marker</a>     (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer,
+                                                         const gchar *name,
+                                                         const gchar *type,
+                                                         const GtkTextIter *where);
+void                <a href="GtkSourceBuffer.html#gtk-source-buffer-move-marker">gtk_source_buffer_move_marker</a>       (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer,
+                                                         <a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker">GtkSourceMarker</a> *marker,
+                                                         const GtkTextIter *where);
+void                <a href="GtkSourceBuffer.html#gtk-source-buffer-delete-marker">gtk_source_buffer_delete_marker</a>     (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer,
+                                                         <a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker">GtkSourceMarker</a> *marker);
+<a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker">GtkSourceMarker</a>*    <a href="GtkSourceBuffer.html#gtk-source-buffer-get-marker">gtk_source_buffer_get_marker</a>        (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer,
+                                                         const gchar *name);
+GSList*             <a href="GtkSourceBuffer.html#gtk-source-buffer-get-markers-in-region">gtk_source_buffer_get_markers_in_region</a>
+                                                        (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer,
+                                                         const GtkTextIter *begin,
+                                                         const GtkTextIter *end);
+<a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker">GtkSourceMarker</a>*    <a href="GtkSourceBuffer.html#gtk-source-buffer-get-first-marker">gtk_source_buffer_get_first_marker</a>  (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer);
+<a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker">GtkSourceMarker</a>*    <a href="GtkSourceBuffer.html#gtk-source-buffer-get-last-marker">gtk_source_buffer_get_last_marker</a>   (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer);
+void                <a href="GtkSourceBuffer.html#gtk-source-buffer-get-iter-at-marker">gtk_source_buffer_get_iter_at_marker</a>
+                                                        (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer,
+                                                         GtkTextIter *iter,
+                                                         <a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker">GtkSourceMarker</a> *marker);
+<a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker">GtkSourceMarker</a>*    <a href="GtkSourceBuffer.html#gtk-source-buffer-get-next-marker">gtk_source_buffer_get_next_marker</a>   (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer,
+                                                         GtkTextIter *iter);
+<a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker">GtkSourceMarker</a>*    <a href="GtkSourceBuffer.html#gtk-source-buffer-get-prev-marker">gtk_source_buffer_get_prev_marker</a>   (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer,
+                                                         GtkTextIter *iter);
+
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2502252"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+
+  GObject
+   +----GtkTextBuffer
+         +----GtkSourceBuffer
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2502283"></a><h2>Properties</h2>
+<pre class="synopsis">
+
+  "<a href="GtkSourceBuffer.html#GtkSourceBuffer--check-brackets">check-brackets</a>"           gboolean              : Read / Write
+  "<a href="GtkSourceBuffer.html#GtkSourceBuffer--escape-char">escape-char</a>"              guint                 : Read / Write
+  "<a href="GtkSourceBuffer.html#GtkSourceBuffer--highlight">highlight</a>"                gboolean              : Read / Write
+  "<a href="GtkSourceBuffer.html#GtkSourceBuffer--language">language</a>"                 <a href="GtkSourceLanguage.html" title="GtkSourceLanguage">GtkSourceLanguage</a>     : Read / Write
+  "<a href="GtkSourceBuffer.html#GtkSourceBuffer--max-undo-levels">max-undo-levels</a>"          gint                  : Read / Write
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2502365"></a><h2>Signals</h2>
+<pre class="synopsis">
+
+  "<a href="GtkSourceBuffer.html#GtkSourceBuffer-can-redo">can-redo</a>"                                       : Run Last
+  "<a href="GtkSourceBuffer.html#GtkSourceBuffer-can-undo">can-undo</a>"                                       : Run Last
+  "<a href="GtkSourceBuffer.html#GtkSourceBuffer-highlight-updated">highlight-updated</a>"                              : Run Last
+  "<a href="GtkSourceBuffer.html#GtkSourceBuffer-marker-updated">marker-updated</a>"                                 : Run Last
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2502410"></a><h2>Description</h2>
+<p>
+The <a href="GtkSourceBuffer.html" title="GtkSourceBuffer"><span class="type">GtkSourceBuffer</span></a> object is the model for <a href="GtkSourceView.html" title="GtkSourceView"><span class="type">GtkSourceView</span></a> widgets.
+It extends the <span class="type">GtkTextBuffer</span> object by adding features necessary to
+display and edit source code: syntax highlighting, bracket matching
+and markers.  It also implements support for undo/redo operations.
+</p>
+<p>
+To create a <a href="GtkSourceBuffer.html" title="GtkSourceBuffer"><span class="type">GtkSourceBuffer</span></a> use <a href="GtkSourceBuffer.html#gtk-source-buffer-new"><code class="function">gtk_source_buffer_new()</code></a> or
+<a href="GtkSourceBuffer.html#gtk-source-buffer-new-with-language"><code class="function">gtk_source_buffer_new_with_language()</code></a>.  The second form is just a
+convenience function which allows you to initially set a
+<a href="GtkSourceLanguage.html" title="GtkSourceLanguage"><span class="type">GtkSourceLanguage</span></a>.
+</p>
+<p>
+By default highlighting is enabled, but you can disable it with
+<a href="GtkSourceBuffer.html#gtk-source-buffer-set-highlight"><code class="function">gtk_source_buffer_set_highlight()</code></a>.  This can be useful if you're not
+using <a href="GtkSourceLanguage.html" title="GtkSourceLanguage"><span class="type">GtkSourceLanguage</span></a> objects to set the highlighting patterns, and
+instead you're manually adding <a href="GtkSourceTag.html" title="GtkSourceTag"><span class="type">GtkSourceTag</span></a> objects to the buffer's
+tag table.
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2594044"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="id2594054"></a><h3>
+<a name="GtkSourceBuffer-struct"></a>GtkSourceBuffer</h3>
+<a class="indexterm" name="id2594065"></a><pre class="programlisting">typedef struct _GtkSourceBuffer GtkSourceBuffer;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2594082"></a><h3>
+<a name="gtk-source-buffer-new"></a>gtk_source_buffer_new ()</h3>
+<a class="indexterm" name="id2594093"></a><pre class="programlisting"><a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a>*    gtk_source_buffer_new               (<a href="GtkSourceTagTable.html" title="GtkSourceTagTable">GtkSourceTagTable</a> *table);</pre>
+<p>
+Creates a new source buffer.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>table</code></em>&#160;:</span></td>
+<td> a <a href="GtkSourceTagTable.html" title="GtkSourceTagTable"><span class="type">GtkSourceTagTable</span></a>, or <code class="literal">NULL</code> to create a new one.
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> a new source buffer.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2594170"></a><h3>
+<a name="gtk-source-buffer-new-with-language"></a>gtk_source_buffer_new_with_language ()</h3>
+<a class="indexterm" name="id2594184"></a><pre class="programlisting"><a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a>*    gtk_source_buffer_new_with_language (<a href="GtkSourceLanguage.html" title="GtkSourceLanguage">GtkSourceLanguage</a> *language);</pre>
+<p>
+Creates a new source buffer using the highlighting patterns in
+<em class="parameter"><code>language</code></em>.  This is equivalent to creating a new source buffer with
+the default tag table and then calling
+<a href="GtkSourceBuffer.html#gtk-source-buffer-set-language"><code class="function">gtk_source_buffer_set_language()</code></a>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>language</code></em>&#160;:</span></td>
+<td> a <a href="GtkSourceLanguage.html" title="GtkSourceLanguage"><span class="type">GtkSourceLanguage</span></a>.
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> a new source buffer which will highlight text
+according to <em class="parameter"><code>language</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2594277"></a><h3>
+<a name="gtk-source-buffer-get-check-brackets"></a>gtk_source_buffer_get_check_brackets ()</h3>
+<a class="indexterm" name="id2594291"></a><pre class="programlisting">gboolean            gtk_source_buffer_get_check_brackets
+                                                        (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer);</pre>
+<p>
+Determines whether bracket match highlighting is activated for the
+source buffer.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>buffer</code></em>&#160;:</span></td>
+<td> a <a href="GtkSourceBuffer.html" title="GtkSourceBuffer"><span class="type">GtkSourceBuffer</span></a>.
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <code class="literal">TRUE</code> if the source buffer will highlight matching
+brackets.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2594371"></a><h3>
+<a name="gtk-source-buffer-set-check-brackets"></a>gtk_source_buffer_set_check_brackets ()</h3>
+<a class="indexterm" name="id2594385"></a><pre class="programlisting">void                gtk_source_buffer_set_check_brackets
+                                                        (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer,
+                                                         gboolean check_brackets);</pre>
+<p>
+Controls the bracket match highlighting function in the buffer.  If
+activated, when you position your cursor over a bracket character
+(a parenthesis, a square bracket, etc.) the matching opening or
+closing bracket character will be highlighted.  You can specify the
+style with the <a href="GtkSourceBuffer.html#gtk-source-buffer-set-bracket-match-style"><code class="function">gtk_source_buffer_set_bracket_match_style()</code></a>
+function.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>buffer</code></em>&#160;:</span></td>
+<td> a <a href="GtkSourceBuffer.html" title="GtkSourceBuffer"><span class="type">GtkSourceBuffer</span></a>.
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>check_brackets</code></em>&#160;:</span></td>
+<td> <code class="literal">TRUE</code> if you want matching brackets highlighted.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2594490"></a><h3>
+<a name="gtk-source-buffer-set-bracket-match-style"></a>gtk_source_buffer_set_bracket_match_style ()</h3>
+<a class="indexterm" name="id2594505"></a><pre class="programlisting">void                gtk_source_buffer_set_bracket_match_style
+                                                        (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *source_buffer,
+                                                         const <a href="gtksourceview-GtkSourceTagStyle.html#GtkSourceTagStyle">GtkSourceTagStyle</a> *style);</pre>
+<p>
+Sets the style used for highlighting matching brackets.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>source_buffer</code></em>&#160;:</span></td>
+<td> a <a href="GtkSourceBuffer.html" title="GtkSourceBuffer"><span class="type">GtkSourceBuffer</span></a>.
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>style</code></em>&#160;:</span></td>
+<td> the <a href="gtksourceview-GtkSourceTagStyle.html#GtkSourceTagStyle"><span class="type">GtkSourceTagStyle</span></a> specifying colors and text
+attributes.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2594593"></a><h3>
+<a name="gtk-source-buffer-get-highlight"></a>gtk_source_buffer_get_highlight ()</h3>
+<a class="indexterm" name="id2594606"></a><pre class="programlisting">gboolean            gtk_source_buffer_get_highlight     (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer);</pre>
+<p>
+Determines whether text highlighting is activated in the source
+buffer.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>buffer</code></em>&#160;:</span></td>
+<td> a <a href="GtkSourceBuffer.html" title="GtkSourceBuffer"><span class="type">GtkSourceBuffer</span></a>.
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <code class="literal">TRUE</code> if highlighting is enabled.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2594686"></a><h3>
+<a name="gtk-source-buffer-set-highlight"></a>gtk_source_buffer_set_highlight ()</h3>
+<a class="indexterm" name="id2594699"></a><pre class="programlisting">void                gtk_source_buffer_set_highlight     (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer,
+                                                         gboolean highlight);</pre>
+<p>
+Controls whether text is highlighted in the buffer.  If <em class="parameter"><code>highlight</code></em>
+is <code class="literal">TRUE</code>, the text will be highlighted according to the patterns
+installed in the buffer (either set with
+<a href="GtkSourceBuffer.html#gtk-source-buffer-set-language"><code class="function">gtk_source_buffer_set_language()</code></a> or by adding individual
+<a href="GtkSourceTag.html" title="GtkSourceTag"><span class="type">GtkSourceTag</span></a> tags to the buffer's tag table).  Otherwise, any
+current highlighted text will be restored to the default buffer
+style.
+</p>
+<p>
+Tags not of <a href="GtkSourceTag.html" title="GtkSourceTag"><span class="type">GtkSourceTag</span></a> type will not be removed by this option,
+and normal <span class="type">GtkTextTag</span> priority settings apply when highlighting is
+enabled.
+</p>
+<p>
+If not using a <a href="GtkSourceLanguage.html" title="GtkSourceLanguage"><span class="type">GtkSourceLanguage</span></a> for setting the highlighting
+patterns in the buffer, it is recommended for performance reasons
+that you add all the <a href="GtkSourceTag.html" title="GtkSourceTag"><span class="type">GtkSourceTag</span></a> tags with highlighting disabled
+and enable it when finished.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>buffer</code></em>&#160;:</span></td>
+<td> a <a href="GtkSourceBuffer.html" title="GtkSourceBuffer"><span class="type">GtkSourceBuffer</span></a>.
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>highlight</code></em>&#160;:</span></td>
+<td> <code class="literal">TRUE</code> if you want to activate highlighting.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2594866"></a><h3>
+<a name="gtk-source-buffer-get-max-undo-levels"></a>gtk_source_buffer_get_max_undo_levels ()</h3>
+<a class="indexterm" name="id2594879"></a><pre class="programlisting">gint                gtk_source_buffer_get_max_undo_levels
+                                                        (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer);</pre>
+<p>
+Determines the number of undo levels the buffer will track for
+buffer edits.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>buffer</code></em>&#160;:</span></td>
+<td> a <a href="GtkSourceBuffer.html" title="GtkSourceBuffer"><span class="type">GtkSourceBuffer</span></a>.
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> the maximum number of possible undo levels.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2594950"></a><h3>
+<a name="gtk-source-buffer-set-max-undo-levels"></a>gtk_source_buffer_set_max_undo_levels ()</h3>
+<a class="indexterm" name="id2594964"></a><pre class="programlisting">void                gtk_source_buffer_set_max_undo_levels
+                                                        (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer,
+                                                         gint max_undo_levels);</pre>
+<p>
+Sets the number of undo levels for user actions the buffer will
+track.  If the number of user actions exceeds the limit set by this
+function, older actions will be discarded.
+</p>
+<p>
+A new action is started whenever the function
+<code class="function">gtk_text_buffer_begin_user_action()</code> is called.  In general, this
+happens whenever the user presses any key which modifies the
+buffer, but the undo manager will try to merge similar consecutive
+actions, such as multiple character insertions into one action.
+But, inserting a newline does start a new action.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>buffer</code></em>&#160;:</span></td>
+<td> a <a href="GtkSourceBuffer.html" title="GtkSourceBuffer"><span class="type">GtkSourceBuffer</span></a>.
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>max_undo_levels</code></em>&#160;:</span></td>
+<td> the desired maximum number of undo levels.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2595067"></a><h3>
+<a name="gtk-source-buffer-get-language"></a>gtk_source_buffer_get_language ()</h3>
+<a class="indexterm" name="id2595080"></a><pre class="programlisting"><a href="GtkSourceLanguage.html" title="GtkSourceLanguage">GtkSourceLanguage</a>*  gtk_source_buffer_get_language      (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer);</pre>
+<p>
+Determines the <a href="GtkSourceLanguage.html" title="GtkSourceLanguage"><span class="type">GtkSourceLanguage</span></a> used by the buffer.  The returned
+object should not be unreferenced by the user.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>buffer</code></em>&#160;:</span></td>
+<td> a <a href="GtkSourceBuffer.html" title="GtkSourceBuffer"><span class="type">GtkSourceBuffer</span></a>.
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> the <a href="GtkSourceLanguage.html" title="GtkSourceLanguage"><span class="type">GtkSourceLanguage</span></a> set by
+<a href="GtkSourceBuffer.html#gtk-source-buffer-set-language"><code class="function">gtk_source_buffer_set_language()</code></a>, or <code class="literal">NULL</code>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2595184"></a><h3>
+<a name="gtk-source-buffer-set-language"></a>gtk_source_buffer_set_language ()</h3>
+<a class="indexterm" name="id2595197"></a><pre class="programlisting">void                gtk_source_buffer_set_language      (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer,
+                                                         <a href="GtkSourceLanguage.html" title="GtkSourceLanguage">GtkSourceLanguage</a> *language);</pre>
+<p>
+Sets the <a href="GtkSourceLanguage.html" title="GtkSourceLanguage"><span class="type">GtkSourceLanguage</span></a> the source buffer will use, adding
+<a href="GtkSourceTag.html" title="GtkSourceTag"><span class="type">GtkSourceTag</span></a> tags with the language's patterns and setting the
+escape character with <a href="GtkSourceBuffer.html#gtk-source-buffer-set-escape-char"><code class="function">gtk_source_buffer_set_escape_char()</code></a>.  Note
+that this will remove any <a href="GtkSourceTag.html" title="GtkSourceTag"><span class="type">GtkSourceTag</span></a> tags currently in the
+buffer's tag table.  The buffer holds a reference to the <em class="parameter"><code>language</code></em>
+set.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>buffer</code></em>&#160;:</span></td>
+<td> a <a href="GtkSourceBuffer.html" title="GtkSourceBuffer"><span class="type">GtkSourceBuffer</span></a>.
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>language</code></em>&#160;:</span></td>
+<td> a <a href="GtkSourceLanguage.html" title="GtkSourceLanguage"><span class="type">GtkSourceLanguage</span></a> to set, or <code class="literal">NULL</code>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2595334"></a><h3>
+<a name="gtk-source-buffer-get-escape-char"></a>gtk_source_buffer_get_escape_char ()</h3>
+<a class="indexterm" name="id2595348"></a><pre class="programlisting">gunichar            gtk_source_buffer_get_escape_char   (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer);</pre>
+<p>
+Determines the escaping character used by the source buffer
+highlighting engine.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>buffer</code></em>&#160;:</span></td>
+<td> a <a href="GtkSourceBuffer.html" title="GtkSourceBuffer"><span class="type">GtkSourceBuffer</span></a>.
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> the UTF-8 character for the escape character the
+buffer is using.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2595418"></a><h3>
+<a name="gtk-source-buffer-set-escape-char"></a>gtk_source_buffer_set_escape_char ()</h3>
+<a class="indexterm" name="id2595432"></a><pre class="programlisting">void                gtk_source_buffer_set_escape_char   (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer,
+                                                         gunichar escape_char);</pre>
+<p>
+Sets the escape character to be used by the highlighting engine.
+</p>
+<p>
+When performing the initial analysis, the engine will discard a
+matching syntax pattern if it's prefixed with an odd number of
+escape characters.  This allows for example to correctly highlight
+strings with escaped quotes embedded.
+</p>
+<p>
+This setting affects only syntax patterns (i.e. those defined in
+<a href="GtkSourceTag.html#GtkSyntaxTag"><span class="type">GtkSyntaxTag</span></a> tags).</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>buffer</code></em>&#160;:</span></td>
+<td> a <a href="GtkSourceBuffer.html" title="GtkSourceBuffer"><span class="type">GtkSourceBuffer</span></a>.
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>escape_char</code></em>&#160;:</span></td>
+<td> the escape character the buffer should use.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2595532"></a><h3>
+<a name="gtk-source-buffer-can-undo"></a>gtk_source_buffer_can_undo ()</h3>
+<a class="indexterm" name="id2595544"></a><pre class="programlisting">gboolean            gtk_source_buffer_can_undo          (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer);</pre>
+<p>
+Determines whether a source buffer can undo the last action.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>buffer</code></em>&#160;:</span></td>
+<td> a <a href="GtkSourceBuffer.html" title="GtkSourceBuffer"><span class="type">GtkSourceBuffer</span></a>.
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <code class="literal">TRUE</code> if it's possible to undo the last action.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2595622"></a><h3>
+<a name="gtk-source-buffer-can-redo"></a>gtk_source_buffer_can_redo ()</h3>
+<a class="indexterm" name="id2595634"></a><pre class="programlisting">gboolean            gtk_source_buffer_can_redo          (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer);</pre>
+<p>
+Determines whether a source buffer can redo the last action
+(i.e. if the last operation was an undo).</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>buffer</code></em>&#160;:</span></td>
+<td> a <a href="GtkSourceBuffer.html" title="GtkSourceBuffer"><span class="type">GtkSourceBuffer</span></a>.
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <code class="literal">TRUE</code> if a redo is possible.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2595712"></a><h3>
+<a name="gtk-source-buffer-undo"></a>gtk_source_buffer_undo ()</h3>
+<a class="indexterm" name="id2595723"></a><pre class="programlisting">void                gtk_source_buffer_undo              (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer);</pre>
+<p>
+Undoes the last user action which modified the buffer.  Use
+<a href="GtkSourceBuffer.html#gtk-source-buffer-can-undo"><code class="function">gtk_source_buffer_can_undo()</code></a> to check whether a call to this
+function will have any effect.
+</p>
+<p>
+Actions are defined as groups of operations between a call to
+<code class="function">gtk_text_buffer_begin_user_action()</code> and
+<code class="function">gtk_text_buffer_end_user_action()</code>, or sequences of similar edits
+(inserts or deletes) on the same line.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><span class="term"><em class="parameter"><code>buffer</code></em>&#160;:</span></td>
+<td> a <a href="GtkSourceBuffer.html" title="GtkSourceBuffer"><span class="type">GtkSourceBuffer</span></a>.
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2595818"></a><h3>
+<a name="gtk-source-buffer-redo"></a>gtk_source_buffer_redo ()</h3>
+<a class="indexterm" name="id2595829"></a><pre class="programlisting">void                gtk_source_buffer_redo              (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer);</pre>
+<p>
+Redoes the last undo operation.  Use <a href="GtkSourceBuffer.html#gtk-source-buffer-can-redo"><code class="function">gtk_source_buffer_can_redo()</code></a>
+to check whether a call to this function will have any effect.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><span class="term"><em class="parameter"><code>buffer</code></em>&#160;:</span></td>
+<td> a <a href="GtkSourceBuffer.html" title="GtkSourceBuffer"><span class="type">GtkSourceBuffer</span></a>.
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2595897"></a><h3>
+<a name="gtk-source-buffer-begin-not-undoable-action"></a>gtk_source_buffer_begin_not_undoable_action ()</h3>
+<a class="indexterm" name="id2595911"></a><pre class="programlisting">void                gtk_source_buffer_begin_not_undoable_action
+                                                        (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer);</pre>
+<p>
+Marks the beginning of a not undoable action on the buffer,
+disabling the undo manager.  Typically you would call this function
+before initially setting the contents of the buffer (e.g. when
+loading a file in a text editor).
+</p>
+<p>
+You may nest <a href="GtkSourceBuffer.html#gtk-source-buffer-begin-not-undoable-action"><code class="function">gtk_source_buffer_begin_not_undoable_action()</code></a> /
+<a href="GtkSourceBuffer.html#gtk-source-buffer-end-not-undoable-action"><code class="function">gtk_source_buffer_end_not_undoable_action()</code></a> blocks.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><span class="term"><em class="parameter"><code>buffer</code></em>&#160;:</span></td>
+<td> a <a href="GtkSourceBuffer.html" title="GtkSourceBuffer"><span class="type">GtkSourceBuffer</span></a>.
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2595998"></a><h3>
+<a name="gtk-source-buffer-end-not-undoable-action"></a>gtk_source_buffer_end_not_undoable_action ()</h3>
+<a class="indexterm" name="id2596012"></a><pre class="programlisting">void                gtk_source_buffer_end_not_undoable_action
+                                                        (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer);</pre>
+<p>
+Marks the end of a not undoable action on the buffer.  When the
+last not undoable block is closed through the call to this
+function, the list of undo actions is cleared and the undo manager
+is re-enabled.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><span class="term"><em class="parameter"><code>buffer</code></em>&#160;:</span></td>
+<td> a <a href="GtkSourceBuffer.html" title="GtkSourceBuffer"><span class="type">GtkSourceBuffer</span></a>.
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2596074"></a><h3>
+<a name="gtk-source-buffer-create-marker"></a>gtk_source_buffer_create_marker ()</h3>
+<a class="indexterm" name="id2596087"></a><pre class="programlisting"><a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker">GtkSourceMarker</a>*    gtk_source_buffer_create_marker     (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer,
+                                                         const gchar *name,
+                                                         const gchar *type,
+                                                         const GtkTextIter *where);</pre>
+<p>
+Creates a marker in the <em class="parameter"><code>buffer</code></em> of type <em class="parameter"><code>type</code></em>.  A marker is
+semantically very similar to a <span class="type">GtkTextMark</span>, except it has a type
+which is used by the <a href="GtkSourceView.html" title="GtkSourceView"><span class="type">GtkSourceView</span></a> displaying the buffer to show a
+pixmap on the left margin, at the line the marker is in.  Because
+of this, a marker is generally associated to a line and not a
+character position.  Markers are also accessible through a position
+or range in the buffer.
+</p>
+<p>
+Markers are implemented using <span class="type">GtkTextMark</span>, so all characteristics
+and restrictions to marks apply to markers too.  These includes
+life cycle issues and "mark-set" and "mark-deleted" signal
+emissions.
+</p>
+<p>
+Like a <span class="type">GtkTextMark</span>, a <a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker"><span class="type">GtkSourceMarker</span></a> can be anonymous if the
+passed <em class="parameter"><code>name</code></em> is <code class="literal">NULL</code>.  Also, the buffer owns the markers so you
+shouldn't unreference it.
+</p>
+<p>
+Markers always have left gravity and are moved to the beginning of
+the line when the user deletes the line they were in.  Also, if the
+user deletes a region of text which contained lines with markers,
+those are deleted.
+</p>
+<p>
+Typical uses for a marker are bookmarks, breakpoints, current
+executing instruction indication in a source file, etc..</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>buffer</code></em>&#160;:</span></td>
+<td> a <a href="GtkSourceBuffer.html" title="GtkSourceBuffer"><span class="type">GtkSourceBuffer</span></a>.
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>name</code></em>&#160;:</span></td>
+<td> the name of the marker, or <code class="literal">NULL</code>.
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>type</code></em>&#160;:</span></td>
+<td> a string defining the marker type, or <code class="literal">NULL</code>.
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>where</code></em>&#160;:</span></td>
+<td> location to place the marker.
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> a new <a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker"><span class="type">GtkSourceMarker</span></a>, owned by the buffer.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2596302"></a><h3>
+<a name="gtk-source-buffer-move-marker"></a>gtk_source_buffer_move_marker ()</h3>
+<a class="indexterm" name="id2596315"></a><pre class="programlisting">void                gtk_source_buffer_move_marker       (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer,
+                                                         <a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker">GtkSourceMarker</a> *marker,
+                                                         const GtkTextIter *where);</pre>
+<p>
+Moves <em class="parameter"><code>marker</code></em> to the new location <em class="parameter"><code>where</code></em>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>buffer</code></em>&#160;:</span></td>
+<td> a <a href="GtkSourceBuffer.html" title="GtkSourceBuffer"><span class="type">GtkSourceBuffer</span></a>.
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>marker</code></em>&#160;:</span></td>
+<td> a <a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker"><span class="type">GtkSourceMarker</span></a> in <em class="parameter"><code>buffer</code></em>.
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>where</code></em>&#160;:</span></td>
+<td> the new location for the marker.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2596426"></a><h3>
+<a name="gtk-source-buffer-delete-marker"></a>gtk_source_buffer_delete_marker ()</h3>
+<a class="indexterm" name="id2596439"></a><pre class="programlisting">void                gtk_source_buffer_delete_marker     (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer,
+                                                         <a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker">GtkSourceMarker</a> *marker);</pre>
+<p>
+Deletes <em class="parameter"><code>marker</code></em> from the source buffer.  The same conditions as for
+<span class="type">GtkTextMark</span> apply here.  The marker is no longer accessible from
+the buffer, but if you held a reference to it, it will not be
+destroyed.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>buffer</code></em>&#160;:</span></td>
+<td> a <a href="GtkSourceBuffer.html" title="GtkSourceBuffer"><span class="type">GtkSourceBuffer</span></a>.
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>marker</code></em>&#160;:</span></td>
+<td> a <a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker"><span class="type">GtkSourceMarker</span></a> in the <em class="parameter"><code>buffer</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2596535"></a><h3>
+<a name="gtk-source-buffer-get-marker"></a>gtk_source_buffer_get_marker ()</h3>
+<a class="indexterm" name="id2596547"></a><pre class="programlisting"><a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker">GtkSourceMarker</a>*    gtk_source_buffer_get_marker        (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer,
+                                                         const gchar *name);</pre>
+<p>
+Looks up the <a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker"><span class="type">GtkSourceMarker</span></a> named <em class="parameter"><code>name</code></em> in <em class="parameter"><code>buffer</code></em>, returning
+<code class="literal">NULL</code> if it doesn't exists.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>buffer</code></em>&#160;:</span></td>
+<td> a <a href="GtkSourceBuffer.html" title="GtkSourceBuffer"><span class="type">GtkSourceBuffer</span></a>.
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>name</code></em>&#160;:</span></td>
+<td> name of the marker to retrieve.
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> the <a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker"><span class="type">GtkSourceMarker</span></a> whose name is <em class="parameter"><code>name</code></em>, or <code class="literal">NULL</code>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2596672"></a><h3>
+<a name="gtk-source-buffer-get-markers-in-region"></a>gtk_source_buffer_get_markers_in_region ()</h3>
+<a class="indexterm" name="id2596685"></a><pre class="programlisting">GSList*             gtk_source_buffer_get_markers_in_region
+                                                        (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer,
+                                                         const GtkTextIter *begin,
+                                                         const GtkTextIter *end);</pre>
+<p>
+Returns an <span class="emphasis"><em>ordered</em></span> (by position) <span class="type">GSList</span> of
+<a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker"><span class="type">GtkSourceMarker</span></a> objects inside the region delimited by the
+<span class="type">GtkTextIter</span> <em class="parameter"><code>begin</code></em> and <em class="parameter"><code>end</code></em>.  The iters may be in any order.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>buffer</code></em>&#160;:</span></td>
+<td> a <a href="GtkSourceBuffer.html" title="GtkSourceBuffer"><span class="type">GtkSourceBuffer</span></a>.
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>begin</code></em>&#160;:</span></td>
+<td> beginning of the range.
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>end</code></em>&#160;:</span></td>
+<td> end of the range.
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> a <span class="type">GSList</span> of the <a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker"><span class="type">GtkSourceMarker</span></a> inside the range.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2596832"></a><h3>
+<a name="gtk-source-buffer-get-first-marker"></a>gtk_source_buffer_get_first_marker ()</h3>
+<a class="indexterm" name="id2596845"></a><pre class="programlisting"><a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker">GtkSourceMarker</a>*    gtk_source_buffer_get_first_marker  (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer);</pre>
+<p>
+Returns the first (nearest to the top of the buffer) marker in
+<em class="parameter"><code>buffer</code></em>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>buffer</code></em>&#160;:</span></td>
+<td> a <a href="GtkSourceBuffer.html" title="GtkSourceBuffer"><span class="type">GtkSourceBuffer</span></a>.
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> a reference to the first <a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker"><span class="type">GtkSourceMarker</span></a>, or <code class="literal">NULL</code> if
+there are no markers in the buffer.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2596926"></a><h3>
+<a name="gtk-source-buffer-get-last-marker"></a>gtk_source_buffer_get_last_marker ()</h3>
+<a class="indexterm" name="id2596939"></a><pre class="programlisting"><a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker">GtkSourceMarker</a>*    gtk_source_buffer_get_last_marker   (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer);</pre>
+<p>
+Returns the last (nearest to the bottom of the buffer) marker in
+<em class="parameter"><code>buffer</code></em>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>buffer</code></em>&#160;:</span></td>
+<td> a <a href="GtkSourceBuffer.html" title="GtkSourceBuffer"><span class="type">GtkSourceBuffer</span></a>.
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> a reference to the last <a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker"><span class="type">GtkSourceMarker</span></a>, or <code class="literal">NULL</code> if
+there are no markers in the buffer.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2597021"></a><h3>
+<a name="gtk-source-buffer-get-iter-at-marker"></a>gtk_source_buffer_get_iter_at_marker ()</h3>
+<a class="indexterm" name="id2597033"></a><pre class="programlisting">void                gtk_source_buffer_get_iter_at_marker
+                                                        (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer,
+                                                         GtkTextIter *iter,
+                                                         <a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker">GtkSourceMarker</a> *marker);</pre>
+<p>
+Initializes <em class="parameter"><code>iter</code></em> at the location of <em class="parameter"><code>marker</code></em>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>buffer</code></em>&#160;:</span></td>
+<td> a <a href="GtkSourceBuffer.html" title="GtkSourceBuffer"><span class="type">GtkSourceBuffer</span></a>.
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>iter</code></em>&#160;:</span></td>
+<td> a <span class="type">GtkTextIter</span> to initialize.
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>marker</code></em>&#160;:</span></td>
+<td> a <a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker"><span class="type">GtkSourceMarker</span></a> of <em class="parameter"><code>buffer</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2597152"></a><h3>
+<a name="gtk-source-buffer-get-next-marker"></a>gtk_source_buffer_get_next_marker ()</h3>
+<a class="indexterm" name="id2597165"></a><pre class="programlisting"><a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker">GtkSourceMarker</a>*    gtk_source_buffer_get_next_marker   (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer,
+                                                         GtkTextIter *iter);</pre>
+<p>
+Returns the nearest marker to the right of <em class="parameter"><code>iter</code></em>.  If there are
+multiple markers at the same position, this function will always
+return the first one (from the internal linked list), even if
+starting the search exactly at its location.  You can get the
+others using <a href="gtksourceview-GtkSourceMarker.html#gtk-source-marker-next"><code class="function">gtk_source_marker_next()</code></a>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>buffer</code></em>&#160;:</span></td>
+<td> a <a href="GtkSourceBuffer.html" title="GtkSourceBuffer"><span class="type">GtkSourceBuffer</span></a>.
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>iter</code></em>&#160;:</span></td>
+<td> the location to start searching from.
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> the <a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker"><span class="type">GtkSourceMarker</span></a> nearest to the right of <em class="parameter"><code>iter</code></em>,
+or <code class="literal">NULL</code> if there are no more markers after <em class="parameter"><code>iter</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2597288"></a><h3>
+<a name="gtk-source-buffer-get-prev-marker"></a>gtk_source_buffer_get_prev_marker ()</h3>
+<a class="indexterm" name="id2597301"></a><pre class="programlisting"><a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker">GtkSourceMarker</a>*    gtk_source_buffer_get_prev_marker   (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *buffer,
+                                                         GtkTextIter *iter);</pre>
+<p>
+Returns the nearest marker to the left of <em class="parameter"><code>iter</code></em>.  If there are
+multiple markers at the same position, this function will always
+return the last one (from the internal linked list), even if
+starting the search exactly at its location.  You can get the
+others using <a href="gtksourceview-GtkSourceMarker.html#gtk-source-marker-prev"><code class="function">gtk_source_marker_prev()</code></a>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>buffer</code></em>&#160;:</span></td>
+<td> a <a href="GtkSourceBuffer.html" title="GtkSourceBuffer"><span class="type">GtkSourceBuffer</span></a>.
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>iter</code></em>&#160;:</span></td>
+<td> the location to start searching from.
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> the <a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker"><span class="type">GtkSourceMarker</span></a> nearest to the left of <em class="parameter"><code>iter</code></em>,
+or <code class="literal">NULL</code> if there are no more markers before <em class="parameter"><code>iter</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2597426"></a><h2>Property Details</h2>
+<div class="refsect2" lang="en">
+<a name="id2597435"></a><h3>
+<a name="GtkSourceBuffer--check-brackets"></a>The "<code class="literal">check-brackets</code>" property</h3>
+<a class="indexterm" name="id2597450"></a><pre class="programlisting">  "check-brackets"           gboolean              : Read / Write</pre>
+<p>Whether to check and highlight matching brackets.</p>
+<p>Default value: TRUE</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2597474"></a><h3>
+<a name="GtkSourceBuffer--escape-char"></a>The "<code class="literal">escape-char</code>" property</h3>
+<a class="indexterm" name="id2597488"></a><pre class="programlisting">  "escape-char"              guint                 : Read / Write</pre>
+<p>Escaping character for syntax patterns.</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2597512"></a><h3>
+<a name="GtkSourceBuffer--highlight"></a>The "<code class="literal">highlight</code>" property</h3>
+<a class="indexterm" name="id2597524"></a><pre class="programlisting">  "highlight"                gboolean              : Read / Write</pre>
+<p>Whether to highlight syntax in the buffer.</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2597548"></a><h3>
+<a name="GtkSourceBuffer--language"></a>The "<code class="literal">language</code>" property</h3>
+<a class="indexterm" name="id2597561"></a><pre class="programlisting">  "language"                 <a href="GtkSourceLanguage.html" title="GtkSourceLanguage">GtkSourceLanguage</a>     : Read / Write</pre>
+<p>Language object to get highlighting patterns from.</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2597581"></a><h3>
+<a name="GtkSourceBuffer--max-undo-levels"></a>The "<code class="literal">max-undo-levels</code>" property</h3>
+<a class="indexterm" name="id2597596"></a><pre class="programlisting">  "max-undo-levels"          gint                  : Read / Write</pre>
+<p>Number of undo levels for the buffer.</p>
+<p>Allowed values: [0,200]</p>
+<p>Default value: 25</p>
+</div>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2597624"></a><h2>Signal Details</h2>
+<div class="refsect2" lang="en">
+<a name="id2597634"></a><h3>
+<a name="GtkSourceBuffer-can-redo"></a>The "can-redo" signal</h3>
+<a class="indexterm" name="id2597641"></a><pre class="programlisting">void                user_function                      (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *sourcebuffer,
+                                                        gboolean         arg1,
+                                                        gpointer         user_data)         : Run Last</pre>
+<p>
+Emitted whenever there is a change in the buffer's ability to redo an
+operation.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>sourcebuffer</code></em>&#160;:</span></td>
+<td>the object which received the signal.
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>arg1</code></em>&#160;:</span></td>
+<td>TRUE if the buffer can now perform an redo.
+
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>user_data</code></em>&#160;:</span></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2597724"></a><h3>
+<a name="GtkSourceBuffer-can-undo"></a>The "can-undo" signal</h3>
+<a class="indexterm" name="id2597732"></a><pre class="programlisting">void                user_function                      (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *sourcebuffer,
+                                                        gboolean         arg1,
+                                                        gpointer         user_data)         : Run Last</pre>
+<p>
+Emitted whenever there is a change in the buffer's ability to undo an
+operation.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>sourcebuffer</code></em>&#160;:</span></td>
+<td>the object which received the signal.
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>arg1</code></em>&#160;:</span></td>
+<td>TRUE if the buffer can now perform an undo.
+
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>user_data</code></em>&#160;:</span></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2597815"></a><h3>
+<a name="GtkSourceBuffer-highlight-updated"></a>The "highlight-updated" signal</h3>
+<a class="indexterm" name="id2597824"></a><pre class="programlisting">void                user_function                      (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *sourcebuffer,
+                                                        GtkTextIter     *arg1,
+                                                        GtkTextIter     *arg2,
+                                                        gpointer         user_data)         : Run Last</pre>
+<p>
+Emitted whenever the syntax highlighting information has been updated,
+so that views can request a redraw if the region changed is visible.
+Usually only view widgets displaying this buffer will be interested in
+this signal.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>sourcebuffer</code></em>&#160;:</span></td>
+<td>the object which received the signal.
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>arg1</code></em>&#160;:</span></td>
+<td>
+<span class="type">GtkTextIter</span> at the start of the updated region.
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>arg2</code></em>&#160;:</span></td>
+<td>
+<span class="type">GtkTextIter</span> at the end of the updated region.
+
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>user_data</code></em>&#160;:</span></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2597941"></a><h3>
+<a name="GtkSourceBuffer-marker-updated"></a>The "marker-updated" signal</h3>
+<a class="indexterm" name="id2597950"></a><pre class="programlisting">void                user_function                      (<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a> *sourcebuffer,
+                                                        GtkTextIter     *arg1,
+                                                        gpointer         user_data)         : Run Last</pre>
+<p>
+Emitted whenever a marker of <em class="parameter"><code>sourcebuffer</code></em> has changed and needs to be
+redisplayed by the view.  A change in a marker's type or location can
+trigger this signal.
+</p>
+<p>
+Note that moving a marker causes the emission of this signal twice:
+one for the old location and one for the new.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>sourcebuffer</code></em>&#160;:</span></td>
+<td>the object which received the signal.
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>arg1</code></em>&#160;:</span></td>
+<td>
+<span class="type">GtkTextIter</span> at the location where the change occurred.
+
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>user_data</code></em>&#160;:</span></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2598052"></a><h2>See Also</h2>
+<p>
+There is an introduction document
+describing the basic concepts of the buffer/view interactions.
+</p>
+<p>
+Check <span class="type">GtkTextBuffer</span> for information about the base buffer; and
+<a href="GtkSourceView.html" title="GtkSourceView"><span class="type">GtkSourceView</span></a> for examples on setting up the buffer to be displayed
+in a view widget.
+</p>
+</div>
+</div>
+</body>
+</html>

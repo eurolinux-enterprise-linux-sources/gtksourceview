@@ -1,0 +1,502 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<title>GtkSourceTag</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.71.0">
+<link rel="start" href="index.html" title="GtkSourceView Reference Manual">
+<link rel="up" href="rn01.html" title="API reference">
+<link rel="prev" href="GtkSourceStyleScheme.html" title="GtkSourceStyleScheme">
+<link rel="next" href="GtkSourceTagTable.html" title="GtkSourceTagTable">
+<meta name="generator" content="GTK-Doc V1.8 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="reference" href="rn01.html" title="API reference">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="GtkSourceStyleScheme.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="rn01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">GtkSourceView Reference Manual</th>
+<td><a accesskey="n" href="GtkSourceTagTable.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts"><nobr><a href="#id2582330" class="shortcut">Top</a>
+                  &#160;|&#160;
+                  <a href="#id2603481" class="shortcut">Description</a>
+                  &#160;|&#160;
+                  <a href="#id2600017" class="shortcut">Object Hierarchy</a>
+                  &#160;|&#160;
+                  <a href="#id2603438" class="shortcut">Properties</a></nobr></td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="GtkSourceTag"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2>
+<a name="id2582330"></a><span class="refentrytitle">GtkSourceTag</span>
+</h2>
+<p>GtkSourceTag</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<h2>Synopsis</h2>
+<a name="GtkSyntaxTag"></a><a name="GtkPatternTag"></a><pre class="synopsis">
+
+#include &lt;gtksourceview/gtksourcetag.h&gt;
+
+
+                    <a href="GtkSourceTag.html#GtkSourceTag-struct">GtkSourceTag</a>;
+                    <a href="GtkSourceTag.html#GtkSourceTagClass">GtkSourceTagClass</a>;
+                    <a href="GtkSourceTag.html#GtkSyntaxTag-struct">GtkSyntaxTag</a>;
+                    <a href="GtkSourceTag.html#GtkSyntaxTagClass">GtkSyntaxTagClass</a>;
+                    <a href="GtkSourceTag.html#GtkPatternTag-struct">GtkPatternTag</a>;
+                    <a href="GtkSourceTag.html#GtkPatternTagClass">GtkPatternTagClass</a>;
+<a href="gtksourceview-GtkSourceTagStyle.html#GtkSourceTagStyle">GtkSourceTagStyle</a>*  <a href="GtkSourceTag.html#gtk-source-tag-get-style">gtk_source_tag_get_style</a>            (<a href="GtkSourceTag.html" title="GtkSourceTag">GtkSourceTag</a> *tag);
+void                <a href="GtkSourceTag.html#gtk-source-tag-set-style">gtk_source_tag_set_style</a>            (<a href="GtkSourceTag.html" title="GtkSourceTag">GtkSourceTag</a> *tag,
+                                                         const <a href="gtksourceview-GtkSourceTagStyle.html#GtkSourceTagStyle">GtkSourceTagStyle</a> *style);
+GtkTextTag*         <a href="GtkSourceTag.html#gtk-syntax-tag-new">gtk_syntax_tag_new</a>                  (const gchar *id,
+                                                         const gchar *name,
+                                                         const gchar *pattern_start,
+                                                         const gchar *pattern_end);
+GtkTextTag*         <a href="GtkSourceTag.html#gtk-pattern-tag-new">gtk_pattern_tag_new</a>                 (const gchar *id,
+                                                         const gchar *name,
+                                                         const gchar *pattern);
+GtkTextTag*         <a href="GtkSourceTag.html#gtk-keyword-list-tag-new">gtk_keyword_list_tag_new</a>            (const gchar *id,
+                                                         const gchar *name,
+                                                         const GSList *keywords,
+                                                         gboolean case_sensitive,
+                                                         gboolean match_empty_string_at_beginning,
+                                                         gboolean match_empty_string_at_end,
+                                                         const gchar *beginning_regex,
+                                                         const gchar *end_regex);
+#define             <a href="GtkSourceTag.html#gtk-block-comment-tag-new">gtk_block_comment_tag_new</a>
+GtkTextTag*         <a href="GtkSourceTag.html#gtk-line-comment-tag-new">gtk_line_comment_tag_new</a>            (const gchar *id,
+                                                         const gchar *name,
+                                                         const gchar *pattern_start);
+GtkTextTag*         <a href="GtkSourceTag.html#gtk-string-tag-new">gtk_string_tag_new</a>                  (const gchar *id,
+                                                         const gchar *name,
+                                                         const gchar *pattern_start,
+                                                         const gchar *pattern_end,
+                                                         gboolean end_at_line_end);
+
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2600017"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+
+  GObject
+   +----GtkTextTag
+         +----GtkSourceTag
+               +----<a href="GtkSourceTag.html#GtkSyntaxTag">GtkSyntaxTag</a>
+               +----<a href="GtkSourceTag.html#GtkPatternTag">GtkPatternTag</a>
+</pre>
+<pre class="synopsis">
+
+  GObject
+   +----GtkTextTag
+         +----<a href="GtkSourceTag.html" title="GtkSourceTag">GtkSourceTag</a>
+               +----GtkSyntaxTag
+</pre>
+<pre class="synopsis">
+
+  GObject
+   +----GtkTextTag
+         +----<a href="GtkSourceTag.html" title="GtkSourceTag">GtkSourceTag</a>
+               +----GtkPatternTag
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2603438"></a><h2>Properties</h2>
+<pre class="synopsis">
+
+  "<a href="GtkSourceTag.html#GtkSourceTag--id">id</a>"                       gchararray            : Read / Write / Construct Only
+  "<a href="GtkSourceTag.html#GtkSourceTag--tag-style">tag-style</a>"                <a href="gtksourceview-GtkSourceTagStyle.html#GtkSourceTagStyle">GtkSourceTagStyle</a>     : Read / Write
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2603481"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2603496"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="id2603507"></a><h3>
+<a name="GtkSourceTag-struct"></a>GtkSourceTag</h3>
+<a class="indexterm" name="id2603520"></a><pre class="programlisting">typedef struct _GtkSourceTag GtkSourceTag;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2603535"></a><h3>
+<a name="GtkSourceTagClass"></a>GtkSourceTagClass</h3>
+<a class="indexterm" name="id2603548"></a><pre class="programlisting">typedef struct _GtkSourceTagClass GtkSourceTagClass;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2603564"></a><h3>
+<a name="GtkSyntaxTag-struct"></a>GtkSyntaxTag</h3>
+<a class="indexterm" name="id2603576"></a><pre class="programlisting">typedef struct _GtkSyntaxTag GtkSyntaxTag;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2603592"></a><h3>
+<a name="GtkSyntaxTagClass"></a>GtkSyntaxTagClass</h3>
+<a class="indexterm" name="id2603604"></a><pre class="programlisting">typedef struct _GtkSyntaxTagClass GtkSyntaxTagClass;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2599487"></a><h3>
+<a name="GtkPatternTag-struct"></a>GtkPatternTag</h3>
+<a class="indexterm" name="id2599499"></a><pre class="programlisting">typedef struct _GtkPatternTag GtkPatternTag;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2599515"></a><h3>
+<a name="GtkPatternTagClass"></a>GtkPatternTagClass</h3>
+<a class="indexterm" name="id2599527"></a><pre class="programlisting">typedef struct _GtkPatternTagClass GtkPatternTagClass;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2599544"></a><h3>
+<a name="gtk-source-tag-get-style"></a>gtk_source_tag_get_style ()</h3>
+<a class="indexterm" name="id2599555"></a><pre class="programlisting"><a href="gtksourceview-GtkSourceTagStyle.html#GtkSourceTagStyle">GtkSourceTagStyle</a>*  gtk_source_tag_get_style            (<a href="GtkSourceTag.html" title="GtkSourceTag">GtkSourceTag</a> *tag);</pre>
+<p>
+Gets the style associated with the given <em class="parameter"><code>tag</code></em>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>tag</code></em>&#160;:</span></td>
+<td> a <a href="GtkSourceTag.html" title="GtkSourceTag"><span class="type">GtkSourceTag</span></a>.
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> a <a href="gtksourceview-GtkSourceTagStyle.html#GtkSourceTagStyle"><span class="type">GtkSourceTagStyle</span></a> if found, or <code class="literal">NULL</code> if not found. 
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2599645"></a><h3>
+<a name="gtk-source-tag-set-style"></a>gtk_source_tag_set_style ()</h3>
+<a class="indexterm" name="id2599656"></a><pre class="programlisting">void                gtk_source_tag_set_style            (<a href="GtkSourceTag.html" title="GtkSourceTag">GtkSourceTag</a> *tag,
+                                                         const <a href="gtksourceview-GtkSourceTagStyle.html#GtkSourceTagStyle">GtkSourceTagStyle</a> *style);</pre>
+<p>
+Associates a given <em class="parameter"><code>style</code></em> with the given <em class="parameter"><code>tag</code></em>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>tag</code></em>&#160;:</span></td>
+<td> a <a href="GtkSourceTag.html" title="GtkSourceTag"><span class="type">GtkSourceTag</span></a>.
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>style</code></em>&#160;:</span></td>
+<td> a <a href="gtksourceview-GtkSourceTagStyle.html#GtkSourceTagStyle"><span class="type">GtkSourceTagStyle</span></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2599754"></a><h3>
+<a name="gtk-syntax-tag-new"></a>gtk_syntax_tag_new ()</h3>
+<a class="indexterm" name="id2605032"></a><pre class="programlisting">GtkTextTag*         gtk_syntax_tag_new                  (const gchar *id,
+                                                         const gchar *name,
+                                                         const gchar *pattern_start,
+                                                         const gchar *pattern_end);</pre>
+<p>
+Creates a new syntax tag object with the provided arguments.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>id</code></em>&#160;:</span></td>
+<td> the ID for the tag.
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>name</code></em>&#160;:</span></td>
+<td> the name of the tag.
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>pattern_start</code></em>&#160;:</span></td>
+<td> the starting pattern.
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>pattern_end</code></em>&#160;:</span></td>
+<td> the ending pattern.
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> a new syntax tag, as a <span class="type">GtkTextTag</span>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2605126"></a><h3>
+<a name="gtk-pattern-tag-new"></a>gtk_pattern_tag_new ()</h3>
+<a class="indexterm" name="id2605137"></a><pre class="programlisting">GtkTextTag*         gtk_pattern_tag_new                 (const gchar *id,
+                                                         const gchar *name,
+                                                         const gchar *pattern);</pre>
+<p>
+Creates a new pattern tag object with the provided arguments.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>id</code></em>&#160;:</span></td>
+<td> the ID for the tag.
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>name</code></em>&#160;:</span></td>
+<td> the name of the tag.
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>pattern</code></em>&#160;:</span></td>
+<td> the pattern.
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> a new pattern tag, as a <span class="type">GtkTextTag</span>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2605236"></a><h3>
+<a name="gtk-keyword-list-tag-new"></a>gtk_keyword_list_tag_new ()</h3>
+<a class="indexterm" name="id2605246"></a><pre class="programlisting">GtkTextTag*         gtk_keyword_list_tag_new            (const gchar *id,
+                                                         const gchar *name,
+                                                         const GSList *keywords,
+                                                         gboolean case_sensitive,
+                                                         gboolean match_empty_string_at_beginning,
+                                                         gboolean match_empty_string_at_end,
+                                                         const gchar *beginning_regex,
+                                                         const gchar *end_regex);</pre>
+<p>
+Creates a new keyword list tag object with the provided arguments.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>id</code></em>&#160;:</span></td>
+<td> the ID for the tag.
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>name</code></em>&#160;:</span></td>
+<td> the name of the tag.
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>keywords</code></em>&#160;:</span></td>
+<td> a list of keywords.
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>case_sensitive</code></em>&#160;:</span></td>
+<td> whether the tag should be case sensitive.
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>match_empty_string_at_beginning</code></em>&#160;:</span></td>
+<td> whether the tag should match empty
+string at the beginning.
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>match_empty_string_at_end</code></em>&#160;:</span></td>
+<td> whether the tag should match empty
+string at the end. 
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>beginning_regex</code></em>&#160;:</span></td>
+<td> the beginning regular expression.
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>end_regex</code></em>&#160;:</span></td>
+<td> the ending regular expression.
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> a new keyword list tag, as a <span class="type">GtkTextTag</span>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2605445"></a><h3>
+<a name="gtk-block-comment-tag-new"></a>gtk_block_comment_tag_new</h3>
+<a class="indexterm" name="id2605455"></a><pre class="programlisting">#define             gtk_block_comment_tag_new</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2605470"></a><h3>
+<a name="gtk-line-comment-tag-new"></a>gtk_line_comment_tag_new ()</h3>
+<a class="indexterm" name="id2605480"></a><pre class="programlisting">GtkTextTag*         gtk_line_comment_tag_new            (const gchar *id,
+                                                         const gchar *name,
+                                                         const gchar *pattern_start);</pre>
+<p>
+Creates a new line comment tag object with the provided arguments.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>id</code></em>&#160;:</span></td>
+<td> the ID for the tag.
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>name</code></em>&#160;:</span></td>
+<td> the name of the tag.
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>pattern_start</code></em>&#160;:</span></td>
+<td> the starting pattern.
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> a new line comment tag, as a <span class="type">GtkTextTag</span>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2605580"></a><h3>
+<a name="gtk-string-tag-new"></a>gtk_string_tag_new ()</h3>
+<a class="indexterm" name="id2605590"></a><pre class="programlisting">GtkTextTag*         gtk_string_tag_new                  (const gchar *id,
+                                                         const gchar *name,
+                                                         const gchar *pattern_start,
+                                                         const gchar *pattern_end,
+                                                         gboolean end_at_line_end);</pre>
+<p>
+Creates a new string tag object with the provided arguments.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>id</code></em>&#160;:</span></td>
+<td> the ID for the tag.
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>name</code></em>&#160;:</span></td>
+<td> the name of the tag.
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>pattern_start</code></em>&#160;:</span></td>
+<td> the starting pattern.
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>pattern_end</code></em>&#160;:</span></td>
+<td> the ending pattern.
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>end_at_line_end</code></em>&#160;:</span></td>
+<td> whether the ending pattern should be suffixed by an end-of-line character.
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> a new string tag, as a <span class="type">GtkTextTag</span>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2605731"></a><h2>Property Details</h2>
+<div class="refsect2" lang="en">
+<a name="id2605740"></a><h3>
+<a name="GtkSourceTag--id"></a>The "<code class="literal">id</code>" property</h3>
+<a class="indexterm" name="id2605752"></a><pre class="programlisting">  "id"                       gchararray            : Read / Write / Construct Only</pre>
+<p>ID used to refer to the source tag.</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2605775"></a><h3>
+<a name="GtkSourceTag--tag-style"></a>The "<code class="literal">tag-style</code>" property</h3>
+<a class="indexterm" name="id2605788"></a><pre class="programlisting">  "tag-style"                <a href="gtksourceview-GtkSourceTagStyle.html#GtkSourceTagStyle">GtkSourceTagStyle</a>     : Read / Write</pre>
+<p>The style associated with the source tag.</p>
+</div>
+</div>
+</div>
+</body>
+</html>

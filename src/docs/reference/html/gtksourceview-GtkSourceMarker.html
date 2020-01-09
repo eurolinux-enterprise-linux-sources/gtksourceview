@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<title>GtkSourceMarker</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.71.0">
+<link rel="start" href="index.html" title="GtkSourceView Reference Manual">
+<link rel="up" href="rn01.html" title="API reference">
+<link rel="prev" href="gtksourceview-Searching-in-a-GtkSourceBuffer.html" title="Searching in a GtkSourceBuffer">
+<link rel="next" href="GtkSourceView.html" title="GtkSourceView">
+<meta name="generator" content="GTK-Doc V1.8 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="reference" href="rn01.html" title="API reference">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="gtksourceview-Searching-in-a-GtkSourceBuffer.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="rn01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">GtkSourceView Reference Manual</th>
+<td><a accesskey="n" href="GtkSourceView.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts"><nobr><a href="#id2583826" class="shortcut">Top</a>
+                  &#160;|&#160;
+                  <a href="#id2556904" class="shortcut">Description</a></nobr></td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="gtksourceview-GtkSourceMarker"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2>
+<a name="id2583826"></a><span class="refentrytitle">GtkSourceMarker</span>
+</h2>
+<p>GtkSourceMarker</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<h2>Synopsis</h2>
+<pre class="synopsis">
+
+#include &lt;gtksourceview/gtksourcemarker.h&gt;
+
+
+typedef             <a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker">GtkSourceMarker</a>;
+void                <a href="gtksourceview-GtkSourceMarker.html#gtk-source-marker-set-marker-type">gtk_source_marker_set_marker_type</a>   (<a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker">GtkSourceMarker</a> *marker,
+                                                         const gchar *type);
+gchar*              <a href="gtksourceview-GtkSourceMarker.html#gtk-source-marker-get-marker-type">gtk_source_marker_get_marker_type</a>   (<a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker">GtkSourceMarker</a> *marker);
+gint                <a href="gtksourceview-GtkSourceMarker.html#gtk-source-marker-get-line">gtk_source_marker_get_line</a>          (<a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker">GtkSourceMarker</a> *marker);
+const gchar*        <a href="gtksourceview-GtkSourceMarker.html#gtk-source-marker-get-name">gtk_source_marker_get_name</a>          (<a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker">GtkSourceMarker</a> *marker);
+<a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a>*    <a href="gtksourceview-GtkSourceMarker.html#gtk-source-marker-get-buffer">gtk_source_marker_get_buffer</a>        (<a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker">GtkSourceMarker</a> *marker);
+<a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker">GtkSourceMarker</a>*    <a href="gtksourceview-GtkSourceMarker.html#gtk-source-marker-next">gtk_source_marker_next</a>              (<a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker">GtkSourceMarker</a> *marker);
+<a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker">GtkSourceMarker</a>*    <a href="gtksourceview-GtkSourceMarker.html#gtk-source-marker-prev">gtk_source_marker_prev</a>              (<a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker">GtkSourceMarker</a> *marker);
+
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2556904"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2556920"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="id2556931"></a><h3>
+<a name="GtkSourceMarker"></a>GtkSourceMarker</h3>
+<a class="indexterm" name="id2558506"></a><p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2558515"></a><h3>
+<a name="gtk-source-marker-set-marker-type"></a>gtk_source_marker_set_marker_type ()</h3>
+<a class="indexterm" name="id2558527"></a><pre class="programlisting">void                gtk_source_marker_set_marker_type   (<a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker">GtkSourceMarker</a> *marker,
+                                                         const gchar *type);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>marker</code></em>&#160;:</span></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>type</code></em>&#160;:</span></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2558594"></a><h3>
+<a name="gtk-source-marker-get-marker-type"></a>gtk_source_marker_get_marker_type ()</h3>
+<a class="indexterm" name="id2558607"></a><pre class="programlisting">gchar*              gtk_source_marker_get_marker_type   (<a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker">GtkSourceMarker</a> *marker);</pre>
+<p>
+Gets the marker type of this <em class="parameter"><code>marker</code></em>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>marker</code></em>&#160;:</span></td>
+<td> a <a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker"><span class="type">GtkSourceMarker</span></a>.
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> the marker type.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2592174"></a><h3>
+<a name="gtk-source-marker-get-line"></a>gtk_source_marker_get_line ()</h3>
+<a class="indexterm" name="id2592186"></a><pre class="programlisting">gint                gtk_source_marker_get_line          (<a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker">GtkSourceMarker</a> *marker);</pre>
+<p>
+Gets the line number of this <em class="parameter"><code>marker</code></em>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>marker</code></em>&#160;:</span></td>
+<td> a <a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker"><span class="type">GtkSourceMarker</span></a>.
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> the line number.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2592260"></a><h3>
+<a name="gtk-source-marker-get-name"></a>gtk_source_marker_get_name ()</h3>
+<a class="indexterm" name="id2592272"></a><pre class="programlisting">const gchar*        gtk_source_marker_get_name          (<a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker">GtkSourceMarker</a> *marker);</pre>
+<p>
+Gets the name of this <em class="parameter"><code>marker</code></em>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>marker</code></em>&#160;:</span></td>
+<td> a <a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker"><span class="type">GtkSourceMarker</span></a>.
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> the name.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2592347"></a><h3>
+<a name="gtk-source-marker-get-buffer"></a>gtk_source_marker_get_buffer ()</h3>
+<a class="indexterm" name="id2592360"></a><pre class="programlisting"><a href="GtkSourceBuffer.html" title="GtkSourceBuffer">GtkSourceBuffer</a>*    gtk_source_marker_get_buffer        (<a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker">GtkSourceMarker</a> *marker);</pre>
+<p>
+Gets the buffer associated with this <em class="parameter"><code>marker</code></em>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>marker</code></em>&#160;:</span></td>
+<td> a <a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker"><span class="type">GtkSourceMarker</span></a>.
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> the <a href="GtkSourceBuffer.html" title="GtkSourceBuffer"><span class="type">GtkSourceBuffer</span></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2548236"></a><h3>
+<a name="gtk-source-marker-next"></a>gtk_source_marker_next ()</h3>
+<a class="indexterm" name="id2548247"></a><pre class="programlisting"><a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker">GtkSourceMarker</a>*    gtk_source_marker_next              (<a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker">GtkSourceMarker</a> *marker);</pre>
+<p>
+Gets the next marker after <em class="parameter"><code>marker</code></em>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>marker</code></em>&#160;:</span></td>
+<td> a <a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker"><span class="type">GtkSourceMarker</span></a>.
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> a <a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker"><span class="type">GtkSourceMarker</span></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2548328"></a><h3>
+<a name="gtk-source-marker-prev"></a>gtk_source_marker_prev ()</h3>
+<a class="indexterm" name="id2548339"></a><pre class="programlisting"><a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker">GtkSourceMarker</a>*    gtk_source_marker_prev              (<a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker">GtkSourceMarker</a> *marker);</pre>
+<p>
+Gets the previous marker before <em class="parameter"><code>marker</code></em>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>marker</code></em>&#160;:</span></td>
+<td> a <a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker"><span class="type">GtkSourceMarker</span></a>.
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> a <a href="gtksourceview-GtkSourceMarker.html#GtkSourceMarker"><span class="type">GtkSourceMarker</span></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</body>
+</html>

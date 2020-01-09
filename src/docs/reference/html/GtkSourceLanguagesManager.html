@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<title>GtkSourceLanguagesManager</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.71.0">
+<link rel="start" href="index.html" title="GtkSourceView Reference Manual">
+<link rel="up" href="rn01.html" title="API reference">
+<link rel="prev" href="GtkSourceLanguage.html" title="GtkSourceLanguage">
+<link rel="next" href="GtkSourceStyleScheme.html" title="GtkSourceStyleScheme">
+<meta name="generator" content="GTK-Doc V1.8 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="reference" href="rn01.html" title="API reference">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="GtkSourceLanguage.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="rn01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">GtkSourceView Reference Manual</th>
+<td><a accesskey="n" href="GtkSourceStyleScheme.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts"><nobr><a href="#id2567553" class="shortcut">Top</a>
+                  &#160;|&#160;
+                  <a href="#id2582624" class="shortcut">Description</a>
+                  &#160;|&#160;
+                  <a href="#id2582569" class="shortcut">Object Hierarchy</a>
+                  &#160;|&#160;
+                  <a href="#id2582593" class="shortcut">Properties</a></nobr></td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="GtkSourceLanguagesManager"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2>
+<a name="id2567553"></a><span class="refentrytitle">GtkSourceLanguagesManager</span>
+</h2>
+<p>GtkSourceLanguagesManager</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<h2>Synopsis</h2>
+<pre class="synopsis">
+
+#include &lt;gtksourceview/gtksourcelanguagesmanager.h&gt;
+
+
+                    <a href="GtkSourceLanguagesManager.html#GtkSourceLanguagesManager-struct">GtkSourceLanguagesManager</a>;
+<a href="GtkSourceLanguagesManager.html" title="GtkSourceLanguagesManager">GtkSourceLanguagesManager</a>* <a href="GtkSourceLanguagesManager.html#gtk-source-languages-manager-new">gtk_source_languages_manager_new</a>
+                                                        (void);
+const GSList*       <a href="GtkSourceLanguagesManager.html#gtk-source-languages-manager-get-available-languages">gtk_source_languages_manager_get_available_languages</a>
+                                                        (<a href="GtkSourceLanguagesManager.html" title="GtkSourceLanguagesManager">GtkSourceLanguagesManager</a> *lm);
+<a href="GtkSourceLanguage.html" title="GtkSourceLanguage">GtkSourceLanguage</a>*  <a href="GtkSourceLanguagesManager.html#gtk-source-languages-manager-get-language-from-mime-type">gtk_source_languages_manager_get_language_from_mime_type</a>
+                                                        (<a href="GtkSourceLanguagesManager.html" title="GtkSourceLanguagesManager">GtkSourceLanguagesManager</a> *lm,
+                                                         const gchar *mime_type);
+const GSList*       <a href="GtkSourceLanguagesManager.html#gtk-source-languages-manager-get-lang-files-dirs">gtk_source_languages_manager_get_lang_files_dirs</a>
+                                                        (<a href="GtkSourceLanguagesManager.html" title="GtkSourceLanguagesManager">GtkSourceLanguagesManager</a> *lm);
+
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2582569"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+
+  GObject
+   +----GtkSourceLanguagesManager
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2582593"></a><h2>Properties</h2>
+<pre class="synopsis">
+
+  "<a href="GtkSourceLanguagesManager.html#GtkSourceLanguagesManager--lang-files-dirs">lang-files-dirs</a>"          gpointer              : Read / Write / Construct Only
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2582624"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2582640"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="id2582650"></a><h3>
+<a name="GtkSourceLanguagesManager-struct"></a>GtkSourceLanguagesManager</h3>
+<a class="indexterm" name="id2550067"></a><pre class="programlisting">typedef struct _GtkSourceLanguagesManager GtkSourceLanguagesManager;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2550083"></a><h3>
+<a name="gtk-source-languages-manager-new"></a>gtk_source_languages_manager_new ()</h3>
+<a class="indexterm" name="id2550095"></a><pre class="programlisting"><a href="GtkSourceLanguagesManager.html" title="GtkSourceLanguagesManager">GtkSourceLanguagesManager</a>* gtk_source_languages_manager_new
+                                                        (void);</pre>
+<p>
+Creates a new language manager.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> a <a href="GtkSourceLanguagesManager.html" title="GtkSourceLanguagesManager"><span class="type">GtkSourceLanguagesManager</span></a>.
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2550141"></a><h3>
+<a name="gtk-source-languages-manager-get-available-languages"></a>gtk_source_languages_manager_get_available_languages ()</h3>
+<a class="indexterm" name="id2550155"></a><pre class="programlisting">const GSList*       gtk_source_languages_manager_get_available_languages
+                                                        (<a href="GtkSourceLanguagesManager.html" title="GtkSourceLanguagesManager">GtkSourceLanguagesManager</a> *lm);</pre>
+<p>
+Gets a list of available languages for the given language manager.
+This function returns a pointer to a internal list, so there is no need to
+free it after usage.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>lm</code></em>&#160;:</span></td>
+<td> a <a href="GtkSourceLanguagesManager.html" title="GtkSourceLanguagesManager"><span class="type">GtkSourceLanguagesManager</span></a>.
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> a list of <a href="GtkSourceLanguage.html" title="GtkSourceLanguage"><span class="type">GtkSourceLanguage</span></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2549760"></a><h3>
+<a name="gtk-source-languages-manager-get-language-from-mime-type"></a>gtk_source_languages_manager_get_language_from_mime_type ()</h3>
+<a class="indexterm" name="id2549775"></a><pre class="programlisting"><a href="GtkSourceLanguage.html" title="GtkSourceLanguage">GtkSourceLanguage</a>*  gtk_source_languages_manager_get_language_from_mime_type
+                                                        (<a href="GtkSourceLanguagesManager.html" title="GtkSourceLanguagesManager">GtkSourceLanguagesManager</a> *lm,
+                                                         const gchar *mime_type);</pre>
+<p>
+Gets the <a href="GtkSourceLanguage.html" title="GtkSourceLanguage"><span class="type">GtkSourceLanguage</span></a> which is associated with the given <em class="parameter"><code>mime_type</code></em>
+in the language manager.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>lm</code></em>&#160;:</span></td>
+<td> a <a href="GtkSourceLanguagesManager.html" title="GtkSourceLanguagesManager"><span class="type">GtkSourceLanguagesManager</span></a>.
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>mime_type</code></em>&#160;:</span></td>
+<td> a mime type.
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> a <a href="GtkSourceLanguage.html" title="GtkSourceLanguage"><span class="type">GtkSourceLanguage</span></a>, or <code class="literal">NULL</code> if there is no language
+associated with the given <em class="parameter"><code>mime_type</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2549901"></a><h3>
+<a name="gtk-source-languages-manager-get-lang-files-dirs"></a>gtk_source_languages_manager_get_lang_files_dirs ()</h3>
+<a class="indexterm" name="id2549915"></a><pre class="programlisting">const GSList*       gtk_source_languages_manager_get_lang_files_dirs
+                                                        (<a href="GtkSourceLanguagesManager.html" title="GtkSourceLanguagesManager">GtkSourceLanguagesManager</a> *lm);</pre>
+<p>
+Gets a list of language files directories for the given language manager.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>lm</code></em>&#160;:</span></td>
+<td> a <a href="GtkSourceLanguagesManager.html" title="GtkSourceLanguagesManager"><span class="type">GtkSourceLanguagesManager</span></a>.
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> a list of language files directories (as strings).
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2549987"></a><h2>Property Details</h2>
+<div class="refsect2" lang="en">
+<a name="id2549998"></a><h3>
+<a name="GtkSourceLanguagesManager--lang-files-dirs"></a>The "<code class="literal">lang-files-dirs</code>" property</h3>
+<a class="indexterm" name="id2550013"></a><pre class="programlisting">  "lang-files-dirs"          gpointer              : Read / Write / Construct Only</pre>
+<p>List of directories where the language specification files (.lang) are located.</p>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<title>GtkSourceTagTable</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.71.0">
+<link rel="start" href="index.html" title="GtkSourceView Reference Manual">
+<link rel="up" href="rn01.html" title="API reference">
+<link rel="prev" href="GtkSourceTag.html" title="GtkSourceTag">
+<link rel="next" href="gtksourceview-GtkSourceTagStyle.html" title="GtkSourceTagStyle">
+<meta name="generator" content="GTK-Doc V1.8 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="reference" href="rn01.html" title="API reference">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="GtkSourceTag.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="rn01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">GtkSourceView Reference Manual</th>
+<td><a accesskey="n" href="gtksourceview-GtkSourceTagStyle.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts"><nobr><a href="#id2559850" class="shortcut">Top</a>
+                  &#160;|&#160;
+                  <a href="#id2598193" class="shortcut">Description</a>
+                  &#160;|&#160;
+                  <a href="#id2598138" class="shortcut">Object Hierarchy</a>
+                  &#160;|&#160;
+                  <a href="#id2598168" class="shortcut">Signals</a></nobr></td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="GtkSourceTagTable"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2>
+<a name="id2559850"></a><span class="refentrytitle">GtkSourceTagTable</span>
+</h2>
+<p>GtkSourceTagTable</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<h2>Synopsis</h2>
+<pre class="synopsis">
+
+#include &lt;gtksourceview/gtksourcetagtable.h&gt;
+
+
+                    <a href="GtkSourceTagTable.html#GtkSourceTagTable-struct">GtkSourceTagTable</a>;
+<a href="GtkSourceTagTable.html" title="GtkSourceTagTable">GtkSourceTagTable</a>*  <a href="GtkSourceTagTable.html#gtk-source-tag-table-new">gtk_source_tag_table_new</a>            (void);
+void                <a href="GtkSourceTagTable.html#gtk-source-tag-table-add-tags">gtk_source_tag_table_add_tags</a>       (<a href="GtkSourceTagTable.html" title="GtkSourceTagTable">GtkSourceTagTable</a> *table,
+                                                         const GSList *tags);
+void                <a href="GtkSourceTagTable.html#gtk-source-tag-table-remove-source-tags">gtk_source_tag_table_remove_source_tags</a>
+                                                        (<a href="GtkSourceTagTable.html" title="GtkSourceTagTable">GtkSourceTagTable</a> *table);
+
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2598138"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+
+  GObject
+   +----GtkTextTagTable
+         +----GtkSourceTagTable
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2598168"></a><h2>Signals</h2>
+<pre class="synopsis">
+
+  "<a href="GtkSourceTagTable.html#GtkSourceTagTable-changed">changed</a>"                                        : Run Last
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2598193"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2598209"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="id2598220"></a><h3>
+<a name="GtkSourceTagTable-struct"></a>GtkSourceTagTable</h3>
+<a class="indexterm" name="id2598231"></a><pre class="programlisting">typedef struct _GtkSourceTagTable GtkSourceTagTable;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2590278"></a><h3>
+<a name="gtk-source-tag-table-new"></a>gtk_source_tag_table_new ()</h3>
+<a class="indexterm" name="id2590290"></a><pre class="programlisting"><a href="GtkSourceTagTable.html" title="GtkSourceTagTable">GtkSourceTagTable</a>*  gtk_source_tag_table_new            (void);</pre>
+<p>
+Creates a new <a href="GtkSourceTagTable.html" title="GtkSourceTagTable"><span class="type">GtkSourceTagTable</span></a>. The table contains no tags by
+default.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> a new <a href="GtkSourceTagTable.html" title="GtkSourceTagTable"><span class="type">GtkSourceTagTable</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2590344"></a><h3>
+<a name="gtk-source-tag-table-add-tags"></a>gtk_source_tag_table_add_tags ()</h3>
+<a class="indexterm" name="id2590355"></a><pre class="programlisting">void                gtk_source_tag_table_add_tags       (<a href="GtkSourceTagTable.html" title="GtkSourceTagTable">GtkSourceTagTable</a> *table,
+                                                         const GSList *tags);</pre>
+<p>
+Adds a list of tag to the table. The added tags are assigned the highest priority
+in the table.
+</p>
+<p>
+If a tag is already present in table or has the same name as an already-added tag,
+then it is not added to the table.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>table</code></em>&#160;:</span></td>
+<td> a <a href="GtkSourceTagTable.html" title="GtkSourceTagTable"><span class="type">GtkSourceTagTable</span></a>.
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>tags</code></em>&#160;:</span></td>
+<td> a <span class="type">GSList</span> containing <span class="type">GtkTextTag</span> objects.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2603699"></a><h3>
+<a name="gtk-source-tag-table-remove-source-tags"></a>gtk_source_tag_table_remove_source_tags ()</h3>
+<a class="indexterm" name="id2603710"></a><pre class="programlisting">void                gtk_source_tag_table_remove_source_tags
+                                                        (<a href="GtkSourceTagTable.html" title="GtkSourceTagTable">GtkSourceTagTable</a> *table);</pre>
+<p>
+Removes all the source tags from the table. This will remove the table's
+reference to the tags, so be careful - tags will end
+up destroyed if you don't have a reference to them.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><span class="term"><em class="parameter"><code>table</code></em>&#160;:</span></td>
+<td> a <a href="GtkSourceTagTable.html" title="GtkSourceTagTable"><span class="type">GtkSourceTagTable</span></a>.
+</td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2603772"></a><h2>Signal Details</h2>
+<div class="refsect2" lang="en">
+<a name="id2603783"></a><h3>
+<a name="GtkSourceTagTable-changed"></a>The "changed" signal</h3>
+<a class="indexterm" name="id2603791"></a><pre class="programlisting">void                user_function                      (<a href="GtkSourceTagTable.html" title="GtkSourceTagTable">GtkSourceTagTable</a> *sourcetagtable,
+                                                        gpointer           user_data)           : Run Last</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>sourcetagtable</code></em>&#160;:</span></td>
+<td>the object which received the signal.
+
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>user_data</code></em>&#160;:</span></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</body>
+</html>
